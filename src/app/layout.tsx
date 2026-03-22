@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import BackgroundSystem from "@/components/BackgroundSystem";
 import ScrollProgress from "@/components/ScrollProgress";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
   title: "CareerLens AI",
@@ -23,12 +24,14 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
       </head>
       <body className="min-h-full flex flex-col bg-surface text-on-surface overflow-x-hidden font-body">
-        <ScrollProgress />
-        <Navbar />
-        <BackgroundSystem />
-        <main className="flex-grow z-10 relative">
-          {children}
-        </main>
+        <AuthProvider>
+          <ScrollProgress />
+          <Navbar />
+          <BackgroundSystem />
+          <main className="flex-grow z-10 relative">
+            {children}
+          </main>
+        </AuthProvider>
       </body>
     </html>
   );

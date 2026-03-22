@@ -6,6 +6,8 @@ Built with a **premium student portfolio aesthetic**, the app features a rich in
 
 ## ✨ Features
 
+- **Firebase Authentication**: Secure Sign In and Sign Up with Email/Password and Google Integration.
+- **Dynamic Navbar**: Responsive navigation that updates based on authentication state, with enhanced readability (`text-lg`).
 - **Agentic Career Coach**: Upload your resume (PDF) for a deep-dive analysis of your skills.
 - **Skill Gap Identification**: AI-driven insights into what's missing for your target career.
 - **Student Portfolio Aesthetic**: A high-end workspace vibe with 10 distinct ambient background elements.
@@ -16,6 +18,7 @@ Built with a **premium student portfolio aesthetic**, the app features a rich in
 
 - **Framework**: [Next.js](https://nextjs.org/) (App Router)
 - **Styling**: Tailwind CSS & Modern CSS Tokens
+- **Authentication**: [Firebase Auth](https://firebase.google.com/docs/auth)
 - **AI Backend**: [Anthropic Claude API](https://www.anthropic.com/api)
 - **PDF Processing**: `pdf-parse`
 - **Hosting**: Firebase Hosting (Next.js Framework Support)

@@ -40,7 +40,7 @@ export default function LandingPage() {
                 <em className="highlight-draw">live data.</em>
               </span>
             </h1>
-            <p className="hero-sub text-lg text-[#8a7a72] max-w-xl leading-relaxed opacity-0 animate-fade-in" style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}>
+            <p className="hero-sub text-xl md:text-2xl text-[#8a7a72] max-w-2xl leading-relaxed opacity-0 animate-fade-in" style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}>
               Upload your resume and select a target company. We utilize live technical signals to verify your skill gaps against *real-time* market requirements.
             </p>
             <div className="hero-actions flex flex-wrap gap-4 pt-4 opacity-0 animate-fade-in" style={{ animationDelay: '1.1s', animationFillMode: 'forwards' }}>
@@ -73,7 +73,74 @@ export default function LandingPage() {
                 <div className="bg-[#1a0a0a]/50 px-8 py-1 rounded-md text-[10px] font-mono text-white/40">careerlens.ai/analyze</div>
                 <div className="w-8"></div>
               </div>
-              <img src="/hero-dashboard.png" alt="Dashboard Preview" className="w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700" />
+              <div className="relative group">
+                <img src="/hero-dashboard.png" alt="Dashboard Preview" className="w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700" />
+                
+                {/* Central Overlay: Live Signals Feed */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="bg-white/90 backdrop-blur-md p-6 rounded-xl shadow-2xl border border-white/20 max-w-[280px] animate-bounce-subtle">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#c94a2a]">Live Signal Feed</span>
+                    </div>
+                    <div className="space-y-3 font-mono text-[11px] text-[#1a0a0a]">
+                      <div className="flex justify-between border-b border-black/5 pb-1">
+                        <span>Fetch: OpenAI/SDE-3</span>
+                        <span className="text-green-600">DONE</span>
+                      </div>
+                      <div className="flex justify-between border-b border-black/5 pb-1">
+                        <span>Scan: PyTorch/Dist.</span>
+                        <span className="text-blue-600">82%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Map: 6wk Roadmap</span>
+                        <span className="text-orange-600">CALC</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Ambient Relatable Element: Coffee Stain */}
+            <div className="absolute -bottom-16 -right-16 w-32 h-32 opacity-20 pointer-events-none rotate-12">
+               <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M50 10C27.9 10 10 27.9 10 50C10 72.1 27.9 90 50 90C72.1 90 90 72.1 90 50C90 27.9 72.1 10 50 10ZM50 82C32.3 82 18 67.7 18 50C18 32.3 32.3 18 50 18C67.7 18 82 32.3 82 50C82 67.7 67.7 82 50 82Z" fill="#8a7a72"/>
+                 <circle cx="45" cy="45" r="30" fill="#8a7a72" fillOpacity="0.1"/>
+               </svg>
+            </div>
+
+            {/* New Ambient Element: Paper Clip */}
+            <div className="absolute top-10 left-10 w-12 h-12 opacity-30 pointer-events-none rotate-[-25deg] z-20">
+               <svg viewBox="0 0 24 24" fill="none" stroke="#8a7a72" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                 <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.82-2.82l8.49-8.48" />
+               </svg>
+            </div>
+
+            {/* New Ambient Element: Technical Blueprint Background */}
+            <div className="absolute -top-20 -left-40 w-[600px] h-[600px] opacity-[0.05] pointer-events-none z-[-2] rotate-[-5deg]">
+               <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 <circle cx="200" cy="200" r="150" stroke="#1a0a0a" strokeWidth="1" strokeDasharray="4 4"/>
+                 <path d="M50 200L350 200" stroke="#1a0a0a" strokeWidth="1" strokeDasharray="2 2"/>
+                 <path d="M200 50L200 350" stroke="#1a0a0a" strokeWidth="1" strokeDasharray="2 2"/>
+                 <rect x="100" y="100" width="200" height="200" stroke="#c94a2a" strokeWidth="0.5" strokeDasharray="8 4"/>
+                 <path d="M100 100L300 300" stroke="#c94a2a" strokeWidth="0.5"/>
+                 <path d="M300 100L100 300" stroke="#c94a2a" strokeWidth="0.5"/>
+                 <text x="210" y="80" fill="#1a0a0a" fontSize="10" fontFamily="monospace">NODE_SIGNAL_ALPHA</text>
+                 <text x="50" y="210" fill="#1a0a0a" fontSize="10" fontFamily="monospace">VECTOR_SIM_0.92</text>
+               </svg>
+            </div>
+
+            {/* Floating Sticky Note 1 */}
+            <div className="absolute -top-10 left-1/4 w-32 h-32 bg-[#fef3c7] shadow-xl p-4 rotate-[-6deg] z-10 opacity-70 border-t-4 border-[#fbbf24] hidden xl:block">
+               <p className="font-syne text-[10px] uppercase font-bold text-[#78350f] mb-1">To-Do</p>
+               <p className="font-mono text-[9px] text-[#78350f] leading-tight">Fix PyTorch gap at Google/SDE3. Update portfolio by Friday.</p>
+            </div>
+
+            {/* Floating Sticky Note 2 */}
+            <div className="absolute bottom-20 -right-10 w-36 h-36 bg-[#d1fae5] shadow-xl p-4 rotate-[8deg] z-10 opacity-70 border-t-4 border-[#34d399] hidden xl:block">
+               <p className="font-syne text-[10px] uppercase font-bold text-[#065f46] mb-1">Live Signal</p>
+               <p className="font-mono text-[9px] text-[#065f46] leading-tight">Razorpay hiring for Backend. System Design is top priority.</p>
             </div>
           </div>
         </div>
@@ -100,6 +167,17 @@ export default function LandingPage() {
             </h2>
           </div>
 
+          {/* New Ambient Element: Curriculum Sketch Background */}
+          <div className="absolute top-1/2 right-10 -translate-y-1/2 w-64 h-64 opacity-[0.03] pointer-events-none rotate-12 hidden lg:block">
+             <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M20 20L180 20" stroke="#1a0a0a" strokeWidth="2" strokeDasharray="4 4"/>
+               <path d="M20 60L140 60" stroke="#1a0a0a" strokeWidth="2" strokeDasharray="4 4"/>
+               <path d="M20 100L160 100" stroke="#1a0a0a" strokeWidth="2" strokeDasharray="4 4"/>
+               <circle cx="170" cy="100" r="10" stroke="#c94a2a" strokeWidth="2" fill="none"/>
+               <path d="M20 140L120 140" stroke="#1a0a0a" strokeWidth="2" strokeDasharray="4 4"/>
+             </svg>
+          </div>
+
           <div className="grid md:grid-cols-5 gap-12 relative z-10">
             {[
               { num: "01", title: "Parse", desc: "Deep semantic extraction of your technical skills." },
@@ -112,8 +190,8 @@ export default function LandingPage() {
                 <div className="w-12 h-12 rounded-full bg-[#c94a2a] text-white flex items-center justify-center font-syne font-bold text-lg shadow-lg">
                   {step.num}
                 </div>
-                <h3 className="text-2xl font-bold">{step.title}</h3>
-                <p className="text-[#8a7a72] leading-relaxed">{step.desc}</p>
+                <h3 className="text-3xl font-bold">{step.title}</h3>
+                <p className="text-xl text-[#8a7a72] leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -146,7 +224,19 @@ export default function LandingPage() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 relative">
+          {/* Radar Chart Illustration in Background */}
+          <div className="absolute top-32 left-1/2 -translate-x-1/2 w-96 h-96 opacity-[0.04] pointer-events-none hidden lg:block">
+             <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M100 20L170 60V140L100 180L30 140V60L100 20Z" stroke="#1a0a0a" strokeWidth="1"/>
+               <path d="M100 50L140 75V125L100 150L60 125V75L100 50Z" stroke="#1a0a0a" strokeWidth="1"/>
+               <path d="M100 20V180" stroke="#1a0a0a" strokeWidth="0.5"/>
+               <path d="M30 60L170 140" stroke="#1a0a0a" strokeWidth="0.5"/>
+               <path d="M170 60L30 140" stroke="#1a0a0a" strokeWidth="0.5"/>
+               <path d="M100 40L150 80V110L100 140L70 110V80L100 40Z" fill="#c94a2a" fillOpacity="0.4"/>
+             </svg>
+          </div>
+          
           <div className="md:col-span-2 card-dark flex flex-col justify-between p-12 overflow-hidden relative group" data-reveal="scale-up">
             <div className="space-y-6 z-10">
               <h3 className="text-4xl">Hiring Intelligence Alpha</h3>
@@ -159,8 +249,8 @@ export default function LandingPage() {
           </div>
 
           <div className="card space-y-6 flex flex-col justify-center corner-fold" data-reveal="scale-up" data-delay="100">
-            <h3 className="text-2xl">Semantic Parser</h3>
-            <p className="text-[#8a7a72]">Decodes hidden implications in your project descriptions to find transferable skills.</p>
+            <h3 className="text-3xl">Semantic Parser</h3>
+            <p className="text-lg text-[#8a7a72]">Decodes hidden implications in your project descriptions to find transferable skills.</p>
           </div>
           
           <div className="card space-y-6 flex flex-col justify-center corner-fold" data-reveal="scale-up" data-delay="200">
@@ -340,16 +430,16 @@ export default function LandingPage() {
           </div>
 
           {[
-            { title: "Product", links: ["Features", "Dashboard", "Simulate", "Pricing"] },
-            { title: "Resources", links: ["Stories", "Roadmaps", "API Docs", "Changelog"] },
-            { title: "Legal", links: ["Privacy", "Terms", "Cookies", "Contact"] }
+            { title: "Product", links: [{n: "Features", h: "/features"}, {n: "Dashboard", h: "/dashboard"}, {n: "Simulate", h: "/dashboard"}, {n: "Pricing", h: "/pricing"}] },
+            { title: "Resources", links: [{n: "Stories", h: "/stories"}, {n: "Roadmaps", h: "/how-it-works"}, {n: "API Docs", h: "/stories"}, {n: "Changelog", h: "/stories"}] },
+            { title: "Legal", links: [{n: "Privacy", h: "/stories"}, {n: "Terms", h: "/stories"}, {n: "Cookies", h: "/stories"}, {n: "Contact", h: "/stories"}] }
           ].map((col, i) => (
             <div key={i} className="space-y-6" data-reveal="fade-up" data-delay={i * 100}>
-              <h4 className="text-xs uppercase tracking-widest font-bold">{col.title}</h4>
+              <h4 className="text-sm uppercase tracking-widest font-bold">{col.title}</h4>
               <ul className="space-y-4">
                 {col.links.map((link) => (
-                  <li key={link}>
-                    <Link href="#" className="text-sm text-[#8a7a72] hover:text-[#c94a2a] transition-colors">{link}</Link>
+                  <li key={link.n}>
+                    <Link href={link.h} className="text-lg text-[#8a7a72] hover:text-[#c94a2a] transition-colors">{link.n}</Link>
                   </li>
                 ))}
               </ul>
@@ -456,6 +546,14 @@ export default function LandingPage() {
           opacity: 0;  transition: opacity 0.3s;
         }
         .testi-card:hover::before { opacity: 1; }
+
+        @keyframes bounce-subtle {
+          0%, 100% { transform: translateY(0); }
+          50%      { transform: translateY(-10px); }
+        }
+        .animate-bounce-subtle {
+          animation: bounce-subtle 4s ease-in-out infinite;
+        }
       `}</style>
     </div>
   );
