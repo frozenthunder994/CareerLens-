@@ -12,8 +12,8 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
     "@google/genai": "^1.46.0",
-    "firebase": "^12.11.0",
-    "next": "16.2.1",
+    "firebase": "^10.14.1",
+    "next": "15.1.7",
     "pdf-parse": "^2.4.5",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -25,7 +25,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.1",
+    "eslint-config-next": "15.1.7",
     "firebase-tools": "^13.31.1",
     "tailwindcss": "^4",
     "typescript": "^5"

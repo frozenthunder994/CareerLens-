@@ -1,3 +1,4 @@
+export const runtime = 'nodejs';
 import { NextResponse } from 'next/server';
 import { PDFParse } from 'pdf-parse';
 import Anthropic from '@anthropic-ai/sdk';

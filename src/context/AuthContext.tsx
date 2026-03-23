@@ -16,10 +16,10 @@ import { useRouter } from 'next/navigation';
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  login: (email: string, pass: string) => Promise<void>;
-  signup: (email: string, pass: string, name: string) => Promise<void>;
+  login: (email: string, pass: string) => Promise<void | { user: null; error: string }>;
+  signup: (email: string, pass: string, name: string) => Promise<void | { user: null; error: string }>;
   logout: () => Promise<void>;
-  loginWithGoogle: () => Promise<void>;
+  loginWithGoogle: () => Promise<void | { user: null; error: string }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -38,11 +38,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const login = async (email: string, pass: string) => {
+    // Add this check at the start of every auth function
+    if (!process.env.NEXT_PUBLIC_FIREBASE_API_KEY) {
+      return { 
+        user: null, 
+        error: 'Authentication service is not configured. Please contact support.' 
+      }
+    }
     await signInWithEmailAndPassword(auth, email, pass);
     router.push('/dashboard');
   };
 
   const signup = async (email: string, pass: string, name: string) => {
+    // Add this check at the start of every auth function
+    if (!process.env.NEXT_PUBLIC_FIREBASE_API_KEY) {
+      return { 
+        user: null, 
+        error: 'Authentication service is not configured. Please contact support.' 
+      }
+    }
     const res = await createUserWithEmailAndPassword(auth, email, pass);
     if (res.user) {
       await updateProfile(res.user, { displayName: name });
@@ -56,6 +70,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const loginWithGoogle = async () => {
+    // Add this check at the start of every auth function
+    if (!process.env.NEXT_PUBLIC_FIREBASE_API_KEY) {
+      return { 
+        user: null, 
+        error: 'Authentication service is not configured. Please contact support.' 
+      }
+    }
     await signInWithPopup(auth, googleProvider);
     router.push('/dashboard');
   };
